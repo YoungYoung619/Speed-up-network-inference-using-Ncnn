@@ -1,5 +1,5 @@
 # Speed-up-network-inference-using-Ncnn
-This packpage include some network inference speeding up examples using ([NCNN](https://github.com/Tencent/ncnn))
+This packpage include some network inference speeding up examples using [NCNN](https://github.com/Tencent/ncnn).
 
 ## Requirement
 ```
