@@ -35,6 +35,18 @@
 #define __max(a, b) (((a) > (b)) ? (a) : (b))
 #define __min(a, b) (((a) < (b)) ? (a) : (b))
 
+static const char* class_names[] = { "vehicle",
+									"person",
+									"traffic light",
+									"traffic sign"
+};
+
+static const int n_class = 4;	// vehicle, person, traffic light, traffic sign
+static const int n_anchor = 7;
+static const int n_dim_per_bbox = n_class + 5; //(x1, y1, x2, y2, conf, cls_0, ...,cls_n)
+
+static cv::Scalar lable_color[n_class] = { cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0), cv::Scalar(255, 255, 0), cv::Scalar(204, 50, 153) };
+
 static float anchors[7][2] = {
 	{1.075f, 0.85f},
 	{4.25f, 4.4625f},
@@ -150,15 +162,12 @@ std::vector<ObjDet::ObjDetItem> nms_boxes_v2(std::vector<ObjDet::ObjDetItem>&bbo
 	return results;
 }
 
+std::vector<ObjDet::BoundingBox> decode_bboxes(ncnn::Mat output) {
+
+}
 
 void draw_objects(const cv::Mat& bgr, const std::vector<ObjDet::ObjDetItem>& objects)
 {	
-	static const char* class_names[] = { "vehicle",
-										"person",
-	};
-
-	static cv::Scalar color[2] = { cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0) };
-
 	cv::Mat image = bgr.clone();
 
 	for (size_t i = 0; i < objects.size(); i++)
@@ -169,7 +178,7 @@ void draw_objects(const cv::Mat& bgr, const std::vector<ObjDet::ObjDetItem>& obj
 		int y1 = (int)(obj.box.y1*720.f);
 		int x2 = (int)(obj.box.x2*1280.f);
 		int y2 = (int)(obj.box.y2*720.f);
-		cv::rectangle(image, cvPoint(x1, y1), cvPoint(x2, y2), color[obj.classtype], 2);
+		cv::rectangle(image, cvPoint(x1, y1), cvPoint(x2, y2), lable_color[obj.classtype], 4);
 		printf("x1:%d  y1:%d  x2:%d  y2:%d conf:%f  class_idx:%d\n", x1, y1, x2, y2, obj.score, obj.classtype);
 		char text[256];
 		sprintf_s(text, "%s %.1f%%", class_names[obj.classtype], obj.score * 100);
@@ -196,16 +205,19 @@ void draw_objects(const cv::Mat& bgr, const std::vector<ObjDet::ObjDetItem>& obj
 }
 
 std::vector<ObjDet::ObjDetItem> detect(const cv::Mat& bgr)
-{
+{	
 	ncnn::Net mynet;
 
 	mynet.opt.use_vulkan_compute = true;
 
 	// the ncnn model https://github.com/nihui/ncnn-assets/tree/master/models
-	mynet.load_param(".\\\\model\\\\my_obj_det.param");
-	mynet.load_model(".\\\\model\\\\my_obj_det.bin");
+	/*mynet.load_param("E:\\\\software\\\\ncnn-master\\\\build-vs2017\\\\tools\\\\onnx\\\\bdd100k_det.param");
+	mynet.load_model("E:\\\\software\\\\ncnn-master\\\\build-vs2017\\\\tools\\\\onnx\\\\bdd100k_det.bin");*/
 
-	ncnn::Mat in = ncnn::Mat::from_pixels_resize(bgr.data, ncnn::Mat::PIXEL_BGR, bgr.cols, bgr.rows, 256, 144);
+	mynet.load_param("E:\\\\software\\\\ncnn-master\\\\build-vs2017\\\\tools\\\\quantize\\\\bdd100k_det_int8.param");
+	mynet.load_model("E:\\\\software\\\\ncnn-master\\\\build-vs2017\\\\tools\\\\quantize\\\\bdd100k_det_int8.bin");
+
+	ncnn::Mat in = ncnn::Mat::from_pixels_resize(bgr.data, ncnn::Mat::PIXEL_RGB, bgr.cols, bgr.rows, 320, 180);
 
 	const float mean_vals[3] = { 104.f, 107.f, 123.f };
 	in.substract_mean_normalize(mean_vals, 0);
@@ -216,7 +228,7 @@ std::vector<ObjDet::ObjDetItem> detect(const cv::Mat& bgr)
 
 	ncnn::Mat out;
 	ex.extract("180", out);
-	//printf("%d %d %d\n", out.w, out.h, out.c);
+	printf("%d %d %d\n", out.w, out.h, out.c);
 	
 	std::vector<std::vector<float>> bboxes; // x1y1x2y2
 	bboxes.resize(out.w*out.h * 7);
@@ -228,7 +240,7 @@ std::vector<ObjDet::ObjDetItem> detect(const cv::Mat& bgr)
 		{
 			for (int x = 0; x < out.w; x++)
 			{
-				int idx = y*out.w*7 + 7*x + (int) q / 7;
+				int idx = y*out.w*n_anchor + n_anchor *x + (int) q / n_dim_per_bbox;
 				bboxes[idx].push_back(ptr[x]);
 			}
 			ptr += out.w;
@@ -268,7 +280,7 @@ std::vector<ObjDet::ObjDetItem> detect(const cv::Mat& bgr)
 		//printf("\n");
 	}
 
-	objs = nms_boxes(objs, 0.5f, 0.6f);
+	objs = nms_boxes(objs, 0.4f, 0.5f);
 
 	/*std::vector<ncnn::Blob> aa = mynet.blobs;*/
 
@@ -279,14 +291,14 @@ std::vector<ObjDet::ObjDetItem> detect(const cv::Mat& bgr)
 int main(int argc, char** argv)
 {
 	std::vector<cv::String> files;
-	cv::glob(".\\\\test\\\\pictures\\\\*.jpg", files, true);
+	cv::glob("F:\\\\dataset\\\\images\\\\*.jpg", files, true);
 
 	clock_t start, finish;
 	for (int i = 0; i < files.size(); i++) {
 		cv::Mat img = cv::imread(files[i], 1);
 		if (img.empty())
 		{
-			fprintf(stderr, "cv::imread %s failed\n", "d:a.jpg");
+			fprintf(stderr, "cv::imread %s failed\n", "d:a.png");
 			return -1;
 		}
 		else
