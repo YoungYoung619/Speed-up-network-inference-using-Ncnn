@@ -1,0 +1,192 @@
+------------------ Evaluating Class-vehicle ----------------------
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.44174
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.78754
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.44640
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.19689
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.34932
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.62281
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.13795
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.48840
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.54093
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.30928
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.49283
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.69438
+-----------------------------------------------------------
+
+------------------ Evaluating Class-person ----------------------
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.09700
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.30976
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.04019
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.04788
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.11808
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.19660
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.08133
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.20752
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.24265
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.14542
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.29058
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.39012
+-----------------------------------------------------------
+
+------------------ Evaluating Class-traffic light ----------------------
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.04210
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.13927
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.01078
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.04363
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.04965
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.03399
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.07928
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.16217
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.17237
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.15188
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.25000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.20000
+-----------------------------------------------------------
+
+------------------ Evaluating Class-traffic sign ----------------------
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11735
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.30567
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.05653
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.07429
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.15102
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.22848
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.12357
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.23746
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.27577
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.19155
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.35477
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.41441
+-----------------------------------------------------------
+
+
+--------------------- FLOPs -------------------------------------------
+THOP has not implemented counting method for  DropBlock2D()
+Register FLOP counter for module Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=16)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(16, 8, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(8, 48, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(48, 48, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=48)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(48, 8, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(8, 48, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(48, 8, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(8, 48, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(48, 48, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=48)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(48, 16, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(16, 96, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(96, 16, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(16, 96, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(96, 16, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(16, 96, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96)
+Either .total_ops or .total_params is already defined in DropBlock2D().Be careful, it might change your code's behavior.
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(96, 24, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+THOP has not implemented counting method for  DropBlock2D()
+Register FLOP counter for module Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=144)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 24, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=144)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 24, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=144)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 24, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=144)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(144, 32, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(192, 56, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(336, 336, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=336)
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(336, 56, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module Conv2d(56, 128, kernel_size=(1, 1), stride=(1, 1))
+THOP has not implemented counting method for  DummyModule()
+Register FLOP counter for module ReLU(inplace=True)
+Register FLOP counter for module Conv2d(128, 63, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+Total params: 0.22M
+Total flops: 86.46M
+--------------------- FLOPs -------------------------------------------
