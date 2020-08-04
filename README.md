@@ -17,4 +17,4 @@ First, choosing the model you want to test. Then, check the test pictures dir, m
 <div align=center><img width="750" height="450" src="obj_detection/example/3.png"></div>
 
 ### Note
-The models were based on Yolov2 with backbone mobilenetv2, and we remove many small objects in bdd100k to train the whole model.
+The models were based on Yolov2 with backbone mobilenetv2, trained by some freebies (e.g. warm up, focal loss, diou and etc.) and we remove many small objects in bdd100k to train the whole models.
