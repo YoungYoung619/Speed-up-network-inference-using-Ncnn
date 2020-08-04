@@ -2,19 +2,16 @@
 This packpage include some network inference speeding up examples using [NCNN](https://github.com/Tencent/ncnn).
 
 ## Requirement
+Please install Ncnn first.
 ```
 Ncnn VS2017 CPU(64bit)
 ```
 
 ## Road object detection
-Including a tiny model (about 50MFLOPs) to detect the vehicle and person.
+Including some light-wight detection model in BDD100k, only supports vehicle, person, traffic light and traffic sign.
 
 ## How to use
-Firstly, convert the onnx model to ncnn model, using following script:
-```
-onnx2ncnn ./model/detection_model.onnx ./model/my_obj_det.param ./model/my_obj_det.bin
-```
-Then, check the test pictures dir, model dir in my_obj_det.cpp (line 282 205 206). Finally, complie whole project and run it. 
+The models could be found in model dir, all of which includes a float32 model and a quantized model (int8), the corresonding metrics could be found in metrics.txt including the the metrics of COCO dataset and FLOPs. 
+First, choosing the model you want to test. Then, check the test pictures dir, model dir in my_obj_det.cpp (line 282 205 206). Finally, complie whole project and run it. 
 
-The whole network can run about 30HZ in i7-8700K
-<div align=center><img width="750" height="450" src="obj_detection/example/1.png"></div>
+<div align=center><img width="750" height="450" src="obj_detection/example/2.png"></div>
