@@ -14,4 +14,7 @@ Including some light-wight detection model in BDD100k, only supports vehicle, pe
 The models could be found in model dir, all of which includes a float32 model and a quantized model (int8), the corresonding metrics could be found in metrics.txt including the the metrics of COCO dataset and FLOPs. 
 First, choosing the model you want to test. Then, check the test pictures dir, model dir in my_obj_det.cpp (line 282 205 206). Finally, complie whole project and run it. 
 
-<div align=center><img width="750" height="450" src="obj_detection/example/2.png"></div>
+<div align=center><img width="750" height="450" src="obj_detection/example/3.png"></div>
+
+### Note
+The models were based on Yolov2 with backbone mobilenetv2, and we remove many small objects in bdd100k to train the whole model.
