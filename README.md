@@ -17,6 +17,7 @@ First, choosing the model you want to test. Then, check the test pictures dir, m
 <div align=center><img width="750" height="450" src="obj_detection/example/3.png"></div> 
 
 ## Results 
+All models were tested in i7-8700k with 2 thread, the quantitative acceleration seemed not obvious enough
 | Method | Float32 Model |       | Int8 Model   |      |
 |--------|---------------|-------|--------------|------|
 |        | Speed \(ms\)  | AP<sub>50</sub>  | Speed \(ms\) | AP<sub>50</sub> |
