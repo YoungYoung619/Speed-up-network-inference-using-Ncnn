@@ -19,7 +19,7 @@ First, choosing the model you want to test. Then, check the test pictures dir, m
 ## Results 
 | Method | Float32 Model |       | Int8 Model   |      |
 |--------|---------------|-------|--------------|------|
-|        | Speed \(ms\)  | AP<sup>50</sup>  | Speed \(ms\) | AP<sup>50</sup> |
+|        | Speed \(ms\)  | AP<sub>50</sub>  | Speed \(ms\) | AP<sub>50</sub> |
 | v1     | 45\.6         | 38\.6 | 69\.4        | \-   |
 | v2     | \-            | \-    | \-           | \-   |
 | v3     | 289\.6        | 46\.2 | 233\.4       | \-   | 
