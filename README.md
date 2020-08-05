@@ -23,6 +23,6 @@ First, choosing the model you want to test. Then, check the test pictures dir, m
 | v1     | 45\.6         | 38\.6 | 69\.4        | \-   |
 | v2     | \-            | \-    | \-           | \-   |
 | v3     | 289\.6        | 46\.2 | 233\.4       | \-   |
-
+It seems that quantitative acceleration is not good
 ## Note
 The models were based on Yolov2 with backbone mobilenetv2, trained by some freebies (e.g. warm up, focal loss, diou and etc.) and we remove many small objects in bdd100k to train the whole models.
