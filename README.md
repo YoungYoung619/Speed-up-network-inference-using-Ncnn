@@ -16,6 +16,7 @@ First, choosing the model you want to test. Then, check the test pictures dir, m
 
 <div align=center><img width="750" height="450" src="obj_detection/example/3.png"></div> 
 
+## Results 
 | Method | Float32 Model |       | Int8 Model   |      |
 |--------|---------------|-------|--------------|------|
 |        | Speed \(ms\)  | AP50  | Speed \(ms\) | AP50 |
